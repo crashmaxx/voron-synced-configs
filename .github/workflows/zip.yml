@@ -13,7 +13,7 @@ jobs:
         exclusions: '*.git* /*node_modules/* .editorconfig'
           
     - name: Copy output
-      run: cp ${{ github.workspace }}/dist/voron-synced-configs.zip voron-synced-configs.zip
+      run: cp ${{ github.workspace }}/voron-synced-configs.zip voron-synced-configs.zip
     
     - uses: actions/upload-artifact@v2.2.4
       with:
