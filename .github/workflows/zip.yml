@@ -4,10 +4,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@main
+    - uses: actions/checkout@master
     - name: Archive Release
-      uses: thedoctor0/zip-release@main
+      uses: thedoctor0/zip-release@master
       with:
         type: 'zip'
         filename: 'voron-synced-configs.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig'
+        
+    - uses: actions/upload-artifact@v2.2.4
+      with:
+        name: voron-synced-configs.zip
+        path: voron-synced-configs.zip
