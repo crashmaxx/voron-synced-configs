@@ -11,8 +11,3 @@ jobs:
         type: 'zip'
         filename: 'voron-synced-configs.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig'
-
-    - uses: actions/upload-artifact@main
-      with:
-        name: voron-synced-configs.zip
-        path: voron-synced-configs.zip
