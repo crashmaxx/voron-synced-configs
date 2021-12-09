@@ -59,7 +59,7 @@ push_config(){
   tag=$(git describe --tags --abbrev=0)
   n_tag=$(./next-tag.sh $tag build)
   git tag -a $n_tag -m "$HOSTNAME"
-  git push
+  git push --follow-tags
 }
 
 grab_version
