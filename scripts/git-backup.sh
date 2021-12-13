@@ -63,11 +63,14 @@ push_config(){
     if ! git diff --quiet
     then
       echo "Clean, commiting changes."
+      git pull
       git add .
       current_date=$(date +"%Y-%m-%d %T")
       git commit -m "Autocommit from $current_date" -m "$m1" -m "$m2" -m "$m3" -m "$m4"
+      git remote update
       tag=$(git describe --tags --abbrev=0)
       n_tag=$(./scripts/next-tag.sh $tag build)
+      git tag -a $n_tag -m "$HOSTNAME"
       git push --follow-tags
     else
       echo "No changes to commit. Already up to date."
