@@ -76,7 +76,7 @@ push_config(){
 }
 
 next_tag(){
-  version=$(git describe --tags --abbrev=0)
+  version="$(git describe --tags --abbrev=0)"
   major=0
   minor=0
   build=0
