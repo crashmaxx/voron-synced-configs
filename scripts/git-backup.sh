@@ -60,11 +60,11 @@ push_config(){
     fi
     git pull
   else
-    if ! git diff --quiet
-    then
-      echo "Clean, commiting changes."
       git pull
       git add .
+    if ! git diff origin/main..HEAD --quiet
+    then
+      echo "Clean, commiting changes."
       current_date=$(date +"%Y-%m-%d %T")
       git commit -m "Autocommit from $current_date" -m "$m1" -m "$m2" -m "$m3" -m "$m4"
       git remote update
