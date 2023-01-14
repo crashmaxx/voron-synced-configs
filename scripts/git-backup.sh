@@ -5,7 +5,7 @@
 ### the listed folders, just keep that line commented out.        ###
 #####################################################################
 ### Path to your config folder you want to backup
-config_folder=/home/pi/klipper_config/voron-synced-configs
+config_folder=/home/pi/printer_data/config/voron-synced-configs
 
 ### Path to your Klipper folder, by default that is '~/klipper'
 klipper_folder=/home/pi/klipper
